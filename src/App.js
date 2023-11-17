@@ -9,7 +9,7 @@ function App() {
     <div className='App'>
       <button 
         onClick={() => {
-          setTextColor("green")
+          setTextColor((textColor === "red") ? "green" : "red")
           setShowText(!showText)
         }}
       >
