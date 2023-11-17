@@ -2,16 +2,20 @@ import './App.css';
 import { useState } from 'react';
 
 function App() {
-  const [inputValue, setInputvalue] = useState('')
-
-  const handleInputchange = (event) => {
-    setInputvalue(event.target.value)
-  }
+  const [showText, setShowText] = useState(true)
+  const [textColor, setTextColor] = useState("red")
   
   return (
     <div className='App'>
-      <input type="text" onChange={handleInputchange}/>
-      {inputValue}
+      <button 
+        onClick={() => {
+          setTextColor("green")
+          setShowText(!showText)
+        }}
+      >
+        Show/Hide
+      </button>
+      {showText && <h1 style={{color: textColor}}>Hello World</h1>}
     </div>
   )
 }
