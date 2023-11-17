@@ -1,5 +1,5 @@
 import './App.css';
-import { User } from './User';
+import { Planet } from './Planet';
 function App() {
   const planets = [
     { name: "Mars", isGasPlanet: false },
@@ -13,7 +13,7 @@ function App() {
   return (
     <div className='App'>
       {planets.map((planet, i) => {
-        return <User name={planet.name} isGasPlanet={planet.isGasPlanet}/>
+        return <Planet name={planet.name} isGasPlanet={planet.isGasPlanet}/>
       })}
     </div>
   )
