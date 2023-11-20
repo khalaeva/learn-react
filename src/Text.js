@@ -1,7 +1,11 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export const Text = () => {
     const [text, setText] = useState("")
+
+    useEffect(() => {
+      console.log('MOUNTED')
+    }, [])
 
     return (
         <div>
