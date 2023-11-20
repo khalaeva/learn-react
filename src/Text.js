@@ -5,6 +5,10 @@ export const Text = () => {
 
     useEffect(() => {
       console.log('MOUNTED')
+
+      return () => {
+        console.log('UNMOUNTED')
+      }
     }, [])
 
     return (
