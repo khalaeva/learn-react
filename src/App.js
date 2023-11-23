@@ -5,13 +5,20 @@ import { Home } from './pages/Home';
 import { Profile } from './pages/Profile';
 import { Contact } from './pages/Contact';
 import { Navbar } from './Navbar';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 export const AppContext = createContext()
 
 function App() {
+  const client = new QueryClient({defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false
+    }
+  }})
   const [username, setUsername] = useState('Anna')
   return (
     <div className='App'>
+      <QueryClientProvider client={client}>
       <AppContext.Provider value={{username, setUsername}}>
       <Router>
         <Navbar/>
@@ -23,6 +30,7 @@ function App() {
         </Routes>
       </Router>
       </AppContext.Provider>
+      </QueryClientProvider>
     </div>
   ) 
 }
