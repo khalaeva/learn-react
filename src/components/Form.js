@@ -11,8 +11,8 @@ export const Form = () => {
     confirmPassword: yup
       .string()
       .oneOf([yup.ref("password"), null], "Passwords Don't Match")
-      .required(),
-  });
+      .required()
+  }); 
 
   const {
     register,
